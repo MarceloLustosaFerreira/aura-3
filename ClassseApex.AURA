@@ -1,0 +1,10 @@
+public class OppAura {
+    @AuraEnabled
+    
+    Public static List<Opportunity> getOpportunitiesNR(){
+        return[Select Name, Amount, StageName, CloseDate FROM Opportunity WHERE StageName ='Negotiation/Review'
+              Order by createdDate Desc limit 5
+              ];
+    }
+
+}
